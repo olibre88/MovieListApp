@@ -1,0 +1,15 @@
+{
+    "name": "oliver/movie-list-app",
+    "authors": [
+        {
+            "name": "Oliver Petrovic",
+            "email": "petrovicoliver88@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
