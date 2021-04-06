@@ -3,7 +3,6 @@
 namespace app\controller;
 
 use app\core\Application;
-use app\core\Controller;
 
 /**
  * Class AppController
@@ -14,14 +13,35 @@ class AppController
     public  function  page()
     {
         $app = new Application();
-        $params = self::getJsonData();
+        $allMovies = self::getJsonData();
+        $recommendedMovies = [];
 
-        return  $app->router->renderView('page', $params);
+        foreach ($allMovies as $data){
+            if ($data['imdbRating'] >= 7){
+                $recommendedMovies[] = $data;
+            }
+        }
+
+        return  $app->router->renderView(
+            'page',
+            [
+                'allMovies' => $allMovies,
+                'recommendedMovies' => $recommendedMovies
+            ]
+        );
     }
 
     public function action()
     {
-        return json_encode(self::getJsonData());
+        $movieId = $_POST['movieId'];
+        $params = self::getJsonData();
+        foreach ($params as $data){
+            if ($data['id'] == $movieId){
+                $returnData = $data;
+            }
+        }
+
+        return json_encode($returnData);
     }
 
     /**

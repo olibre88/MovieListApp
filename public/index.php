@@ -9,6 +9,6 @@ use app\controller\AppController;
 $app = new Application();
 
 $app->router->get('/',  [AppController::class, 'page']);
-$app->router->post('/test', [AppController::class, 'action']);
+$app->router->post('/data', [AppController::class, 'action']);
 
 $app->run();
