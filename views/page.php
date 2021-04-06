@@ -136,25 +136,40 @@
 </div>
 
 <div class="modal fade" id="movie-list" tabindex="-1" aria-labelledby="movie-list" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-sm-right">
+    <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 id="checkModal">Watchlist Movies</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" data-monday="[]">
-                <h3>Monday: </h3><p id="monday"></p><hr>
-                <h3>Tuesday: </h3><p id="tuesday"></p><hr>
-                <h3>Wednesday: </h3><p id="wednesday"></p><hr>
-                <h3>Thursday: </h3><p id="thursday"></p><hr>
-                <h3>Friday: </h3><p id="friday"></p><hr>
-                <h3>Saturday: </h3><p id="saturday"></p><hr>
-                <h3>Sunday: </h3><p id="sunday"></p><hr>
-
+            <div class="modal-body">
+                <table id="tab" class="table table-bordered table-striped">
+                    <tbody>
+                    <tr>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                    <tr>
+                        <th id="monday"></th>
+                        <th id="tuesday"></th>
+                        <th id="wednesday"></th>
+                        <th id="thursday"></th>
+                        <th id="friday"></th>
+                        <th id="saturday"></th>
+                        <th id="sunday"></th>
+                    </tr>
+                    </tbody></table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <a id="export-csv" href="#">
+                <button type="button" class="btn btn-success" id="">Export CSV</button>
+                </a>
             </div>
         </div>
     </div>
